@@ -30,7 +30,7 @@ require('./interfaces')(function(err, ifaces) {
   
   var line = contrib.line({
     xLabelPadding: 3,
-    xPadding: 5,
+    xPadding: 3,
     showLegend: true,
     wholeNumbersOnly: false,
     label: 'Bandwidth',
