@@ -1,0 +1,78 @@
+
+'use strict';
+
+require('./interfaces')(function(err, ifaces) {
+
+  var tick = 0;
+  var colours = ['red', 'green', 'blue', 'yellow', 'white', 'magenta', 'cyan'];
+
+  var rXseries = ifaces.map(function(iface, i) {
+    return {
+      title: iface + ' rx',
+      style: { line: colours[i] },
+      x: [],
+      y: []
+    };
+  }), tXseries = rXseries.slice().map(function(iface, i) {
+    return {
+      title: iface.title.replace('rx', 'tx'),
+      style: { line: colours[i] },
+      x: [],
+      y: []
+    };
+  });
+
+  var ifstat = require('./ifstat');
+  var blessed = require('blessed');
+  var contrib = require('blessed-contrib');
+  var screen = blessed.screen();
+  
+  var line = contrib.line({
+    xLabelPadding: 3,
+    xPadding: 5,
+    showLegend: true,
+    wholeNumbersOnly: false,
+    label: 'Bandwidth',
+    style: {
+      line: 'yellow',
+      text: 'green',
+      baseline: 'black'
+    }
+  });
+
+  screen.append(line);
+
+  screen.key([
+    'escape', 'q', 'C-c'
+  ], function(ch, key) {
+    return process.exit(0);
+  });
+
+  ifstat(function(data) {
+    var usage = data.toString().trim().split(
+      /\s/g
+    ).filter(function(line) {
+      return line !== '';
+    });
+
+    for (var i = 0, len = rXseries.length; i < len; i++) {
+      if (tick >= 10) {
+        rXseries[i].x.shift();
+        rXseries[i].y.shift();
+        tXseries[i].x.shift();
+        tXseries[i].y.shift();
+      }
+      rXseries[i].x.push('t' + tick);
+      rXseries[i].y.push(parseFloat(usage[i], 10));
+      tXseries[i].x.push('t' + tick);
+      tXseries[i].y.push(parseFloat(usage[i + 1], 10));
+    }
+
+    line.setData(rXseries.concat(tXseries));
+    screen.render();
+
+    ++tick;
+  });
+
+  screen.render();
+});
