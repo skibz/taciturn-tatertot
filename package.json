@@ -2,13 +2,18 @@
   "name": "bandwidth",
   "version": "0.0.3",
   "description": "",
+  "private": true,
   "main": "index.js",
+  "preferGlobal": true,
+  "bin": {
+    "taciturn-tatertot": "index"
+  },
   "scripts": {
     "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Ant Cosentino <ant@io.co.za>",
-  "license": "ISC",
+  "license": "UNLICENSE",
   "dependencies": {
     "blessed": "^0.1.81",
     "blessed-contrib": "2.3.3"
