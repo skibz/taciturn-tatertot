@@ -1,5 +1,5 @@
 
-# taciturn tatertot
+# taciturn-tatertot
 
 a simple and kind of unfinished bandwidth meter
 
