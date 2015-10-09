@@ -16,6 +16,7 @@ before_install:
   - tar -zxf ifstat-1.1.tar.gz
   - cd ifstat-1.1
   - (sudo ./configure && sudo make && sudo make install && exit 0)
+  - cd ..
 after_script:
   - npm test --coverage
   - codeclimate-test-reporter < coverage/lcov.info
