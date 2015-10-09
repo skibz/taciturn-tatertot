@@ -15,13 +15,17 @@
   "bin": {
     "taciturn-tatertot": "index"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/skibz/taciturn-tatertot.git"
+  },
   "scripts": {
     "start": "./index",
     "test": "istanbul test _mocha -- -R spec",
     "coverage": "istanbul cover _mocha --report lcovonly -- test -R spec"
   },
   "author": "Ant Cosentino <ant@io.co.za>",
-  "license": "UNLICENSE",
+  "license": "Unlicense",
   "dependencies": {
     "blessed": "^0.1.81",
     "blessed-contrib": "2.3.3"
