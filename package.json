@@ -1,6 +1,6 @@
 {
   "name": "taciturn-tatertot",
-  "version": "0.1.14",
+  "version": "0.1.15",
   "description": "a simple and kind of unfinished bandwidth meter",
   "keywords": [
     "cli",
