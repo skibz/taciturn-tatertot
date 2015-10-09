@@ -26,6 +26,7 @@ describe('interfaces', function() {
   });
   it('should have an array of interface names on the list key', function(done) {
     interfaces(function(err, ifaces) {
+      expect(err).to.not.be.okay;
       expect(ifaces.list).to.be.an.instanceof(Array);
       expect(ifaces.list.length).to.be.gt(0);
       done();
