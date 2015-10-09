@@ -12,8 +12,12 @@ node_js:
 #     packages:
 #       - ifstat
 before_install:
-  - wget http://gael.roualland.free.fr/ifstat/ifstat_1.1-1_i386.deb
-  - sudo dpkg -i ifstat_1.1-1_i386.deb
+  - wget http://gael.roualland.free.fr/ifstat/ifstat-1.1.tar.gz
+  - tar -zxf ifstat-1.1.tar.gz
+  - cd ifstat-1.1
+  - ./configure --prefix=$(pwd)
+  - make
+  - make install
 after_script:
   - npm test --coverage
   - codeclimate-test-reporter < coverage/lcov.info
