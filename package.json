@@ -1,8 +1,15 @@
 {
   "name": "taciturn-tatertot",
-  "version": "0.0.6",
+  "version": "0.1.0",
   "description": "a simple and kind of unfinished bandwidth meter",
-  "keywords": ["cli", "bandwidth", "meter", "blessed", "ncurses", "terminal"],
+  "keywords": [
+    "cli",
+    "bandwidth",
+    "meter",
+    "blessed",
+    "ncurses",
+    "terminal"
+  ],
   "main": "index",
   "preferGlobal": true,
   "bin": {
