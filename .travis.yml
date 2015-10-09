@@ -15,7 +15,7 @@ before_install:
   - wget http://gael.roualland.free.fr/ifstat/ifstat-1.1.tar.gz
   - tar -zxf ifstat-1.1.tar.gz
   - cd ifstat-1.1
-  - (./configure && make && make install && exit 0)
+  - (sudo ./configure && sudo make && sudo make install && exit 0)
 after_script:
   - npm test --coverage
   - codeclimate-test-reporter < coverage/lcov.info
