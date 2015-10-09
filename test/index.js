@@ -17,6 +17,7 @@ describe('chunk', function() {
 describe('interfaces', function() {
   it('should return an object with specific keys', function(done) {
     interfaces(function(err, ifaces) {
+      expect(err).to.not.be.okay;
       expect(ifaces.list).to.be.okay;
       expect(ifaces.rx).to.be.okay;
       expect(ifaces.tx).to.be.okay;
