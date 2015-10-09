@@ -12,7 +12,8 @@ node_js:
 #     packages:
 #       - ifstat
 before_install:
-  - sudo dpkg -i <(wget http://gael.roualland.free.fr/ifstat/ifstat_1.1-1_i386.deb)
+  - wget http://gael.roualland.free.fr/ifstat/ifstat_1.1-1_i386.deb
+  - sudo dpkg -i ifstat_1.1-1_i386.deb
 after_script:
   - npm test --coverage
   - codeclimate-test-reporter < coverage/lcov.info
