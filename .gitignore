@@ -3,3 +3,4 @@
 .localized
 *.db
 node_modules/
+coverage/
