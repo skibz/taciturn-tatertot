@@ -3,10 +3,20 @@
 
 > a simple and kind of unfinished bandwidth meter
 
-using `ifconfig`, [blessed](https://github.com/chjj/blessed) and [blessed-contrib](https://github.com/yaronn/blessed-contrib) (`ncurses` abstraction)
+using `ifconfig`, `ifstat`, [blessed](https://github.com/chjj/blessed) and [blessed-contrib](https://github.com/yaronn/blessed-contrib) (`ncurses` abstraction)
 
 ##### build and run
 
+debian-derived linuxes:
+
+```bash
+sudo apt-get install -y ifstat
+npm install && npm start
 ```
-npm i && npm start
+
+os x:
+
+```bash
+brew install ifstat
+npm install && npm start
 ```
