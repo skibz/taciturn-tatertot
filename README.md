@@ -20,3 +20,5 @@ os x:
 brew install ifstat
 npm install && npm start
 ```
+
+officially, this program only supports os x and linux. however, if you've managed to get it running on another platform, please open an issue and let me know! the same goes for wanting to have support added for your platform.
