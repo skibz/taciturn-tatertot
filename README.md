@@ -11,14 +11,14 @@ debian-derived linuxes:
 
 ```bash
 sudo apt-get install -y ifstat
-npm install && npm start
+npm i -g taciturn-tatertot
 ```
 
 os x:
 
 ```bash
 brew install ifstat
-npm install && npm start
+npm i -g taciturn-tatertot
 ```
 
 officially, this program only supports os x and linux. however, if you've managed to get it running on another platform, please open an issue and let me know! the same goes for wanting to have support added for your platform.
