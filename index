@@ -4,7 +4,7 @@
 
 var tick = 0;
 
-var chunk = require('./chunk');
+var interfaces = require('./interfaces')
 var ifstat = require('./ifstat');
 var blessed = require('blessed');
 var contrib = require('blessed-contrib');
@@ -18,8 +18,8 @@ var line = contrib.line({
   label: 'Bandwidth',
   style: {
     line: 'yellow',
-    text: 'green',
-    baseline: 'black'
+    text: 'white',
+    baseline: 'white'
   }
 });
 
@@ -31,18 +31,9 @@ screen.key([
   return process.exit(0);
 });
 
-require('./interfaces')(function(err, ifaces) {
+interfaces(function(err, ifaces) {
   if (err) return console.log('exiting with error:', err);
-  ifstat(ifaces.list, function(data) {
-    var usage = chunk.call(
-      data.toString().trim().split(
-        /\s/g
-      ).filter(function(line) {
-        return line !== '';
-      }),
-      2
-    );
-
+  ifstat(ifaces.list, function(usage) {
     for (var i = 0, len = ifaces.list.length; i < len; i++) {
       if (tick >= 10) {
         ifaces.rx[i].x.shift();
@@ -59,8 +50,7 @@ require('./interfaces')(function(err, ifaces) {
     line.setData(ifaces.rx.concat(ifaces.tx));
     screen.render();
 
-    ++tick;
+    tick += 1;
   });
-
   screen.render();
 });
