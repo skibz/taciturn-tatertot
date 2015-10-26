@@ -1,6 +1,6 @@
 {
   "name": "taciturn-tatertot",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "description": "a simple and kind of unfinished bandwidth meter",
   "keywords": [
     "cli",
@@ -24,6 +24,16 @@
     "test": "istanbul test _mocha -- -R spec",
     "coverage": "istanbul cover _mocha --report lcovonly -- test -R spec"
   },
+  "bugs": {
+    "url": "https://github.com/skibz/taciturn-tatertot/issues",
+    "email": "ant@io.co.za"
+  },
+  "engines": {
+    "node": ">=0.6"
+  },
+  "os": [
+    "!win32"
+  ],
   "author": "Ant Cosentino <ant@io.co.za>",
   "license": "Unlicense",
   "dependencies": {
