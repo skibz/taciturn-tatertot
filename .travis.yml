@@ -9,7 +9,6 @@ node_js:
 addons:
   apt:
     packages:
-      - ifconfig
       - ifstat
 after_script:
   - npm test --coverage
