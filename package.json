@@ -38,7 +38,8 @@
   "license": "Unlicense",
   "dependencies": {
     "blessed": "^0.1.81",
-    "blessed-contrib": "2.3.3"
+    "blessed-contrib": "2.3.3",
+    "blow-chunks": "^1.0.1"
   },
   "devDependencies": {
     "chai": "3.3.0",
