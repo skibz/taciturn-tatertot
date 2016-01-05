@@ -4,7 +4,7 @@
 
 var tick = 0;
 
-var interfaces = require('./interfaces')
+var interfaces = require('./interfaces');
 var ifstat = require('./ifstat');
 var blessed = require('blessed');
 var contrib = require('blessed-contrib');
@@ -25,9 +25,7 @@ var line = contrib.line({
 
 screen.append(line);
 
-screen.key([
-  'escape', 'q', 'C-c'
-], function(ch, key) {
+screen.key(['escape', 'q', 'C-c'], function(ch, key) {
   return process.exit(0);
 });
 
