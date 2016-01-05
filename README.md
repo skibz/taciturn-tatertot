@@ -3,7 +3,7 @@
 
 > a simple and kind of unfinished bandwidth meter
 
-using `ifconfig`, `ifstat`, [blessed](https://github.com/chjj/blessed) and [blessed-contrib](https://github.com/yaronn/blessed-contrib) (`ncurses` abstraction)
+using `ifstat`, [blessed](https://github.com/chjj/blessed) and [blessed-contrib](https://github.com/yaronn/blessed-contrib) (`ncurses` abstraction)
 
 ##### build and run
 
