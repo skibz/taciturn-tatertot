@@ -22,7 +22,9 @@
   "scripts": {
     "start": "./index",
     "test": "istanbul test _mocha -- -R spec",
-    "coverage": "istanbul cover _mocha --report lcovonly -- test -R spec"
+    "coverage": "istanbul cover _mocha --report lcovonly -- test -R spec",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "bugs": {
     "url": "https://github.com/skibz/taciturn-tatertot/issues",
@@ -39,12 +41,14 @@
   "dependencies": {
     "blessed": "^0.1.81",
     "blessed-contrib": "2.3.3",
-    "blow-chunks": "^1.0.1"
+    "blow-chunks": "^1.0.1",
+    "snyk": "^1.88.4"
   },
   "devDependencies": {
     "chai": "3.3.0",
     "codeclimate-test-reporter": "0.1.1",
     "istanbul": "0.3.22",
     "mocha": "2.3.3"
-  }
+  },
+  "snyk": true
 }
